@@ -7,7 +7,7 @@ export default function cleanSet(set, startString) {
 
   for (const value of set) { // On parcourt chaque valeur de l'ensemble
     if (value.startsWith(startString)) { // On vérifie si la valeur commence par startString
-      resultArray.push(value.slice(startString.length)); // On ajoute le reste de la chaîne au tableau
+      resultArray.push(value.slice(startString.length)); // On ajoute le reste de la chaîne
     }
   }
 
