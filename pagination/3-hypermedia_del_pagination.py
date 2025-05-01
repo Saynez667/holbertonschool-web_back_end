@@ -30,16 +30,18 @@ class Server:
         """Dataset indexed by sorting position, starting at 0"""
         if self.__indexed_dataset is None:
             dataset = self.dataset()
-            # Note: truncated_dataset is not used here but kept for reference
             truncated_dataset = dataset[:1000]
-            self.__indexed_dataset = {i: dataset[i] for i in range(len(dataset))}
+            self.__indexed_dataset = {i: dataset[i] for i in range
+                                      (len(dataset))}
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = 0, page_size: int = 10) -> Dict[str, Any]:
+    def get_hyper_index(self, index:
+                        int = 0, page_size: int = 10) -> Dict[str, Any]:
         """
         Return a dictionary with pagination info resilient to deletions
         """
-        assert isinstance(index, int) and 0 <= index < len(self.indexed_dataset()), \
+        assert isinstance(index, int) and 0 <= index < len(
+            self.indexed_dataset()), \
             "index out of range"
         assert isinstance(page_size, int) and page_size > 0, \
             "page_size must be a positive integer"
