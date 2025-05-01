@@ -59,7 +59,8 @@ class Server:
         """
         data = self.get_page(page, page_size)
         dataset_length = len(self.dataset())
-        total_pages = math.ceil(dataset_length / page_size) if dataset_length > 0 else 0
+        total_pages = math.ceil(dataset_length /
+                                page_size) if dataset_length > 0 else 0
 
         hyper = {
             'page_size': len(data),
