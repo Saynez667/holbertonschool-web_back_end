@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-const path = require('path');
+// const path = require('path'); ❌ inutile
 
 function countStudents(filePath) {
   return new Promise((resolve, reject) => {
@@ -30,7 +30,6 @@ function countStudents(filePath) {
   });
 }
 
-// Crée le serveur HTTP
 const app = http.createServer(async (req, res) => {
   const databasePath = process.argv[2];
 
