@@ -11,7 +11,7 @@ function countStudents(filePath) {
       }
 
       const lines = data.trim().split('\n');
-      const students = lines.slice(1).filter(line => line.trim() !== '');
+      const students = lines.slice(1).filter((line) => line.trim() !== '');
 
       const fields = {};
       for (const line of students) {
